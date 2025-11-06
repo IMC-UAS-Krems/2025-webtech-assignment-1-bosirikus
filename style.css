@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(fonts/Poppins-Medium.ttf);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #eae7e6;
+    --text-color: #1D252A;
+    --link-color: #4A4A4A;
+}
+
+body {
+    color: #1a1c20;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    border-radius: 10px;
+    background-color: #d0bcb0;
+    margin-bottom: 10px;
+}
+
+nav span {
+    margin-left: 5px;
+}
+
+nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Underline hover animation:
+Reference: https://css-tricks.com/css-link-hover-effects/ 
+Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/::after￼
+Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/transition￼
+Reference: https://prismic.io/blog/css-hover-effects
+*/
+
+footer {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: #4A4A4A;
+    text-align: center;
+}
+
+.introduction {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    gap: 40px;
+    margin-top: 25px;
+}
+
+.introduction .info h2 {
+    font-size: 50px;
+}
+
+
+.pfp img {
+    width: 300px;
+    height: auto;
+    border-radius: 100px;
+}
+
+#about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#about-me h1 {
+    margin-bottom: 1px;
+}
+
+#about-me h2 {
+    margin-top: 1px;
+}
+
+.about-image {
+    width: 300px;
+    height: auto;
+    border-radius: 50px;
+}
+
+.music-taste {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    max-width: 90%;
+    line-height: 1.6;
+}
+
+.music-image {
+    display: flex;
+    align-items: start;
+    justify-self: left;
+}
+
+.music-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.passions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.passionsImg{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.passionsText{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .music-taste {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .music-image {
+        justify-content: center;
+    }
+
+    .about-image {
+        max-width: 250px;
+    }
+
+    .passionsImg {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #about-me {
+        margin-bottom: 8%;
+    }
+
+    .music-taste {
+        max-width: 95%;
+        padding: 0 10px;
+    }
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.gal-img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.gal-img:hover {
+    transform: scale(1.1);
+}
+
+/* Reference: 
+https://www.shecodes.io/athena/22284-how-to-scale-images-with-different-sizes-in-a-css-grid 
+*/
+
+.gallery {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+
+.form {
+    background: #d1f3e7;
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+    border-radius: 5px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    left: 0;
+    right: 0;
+    border-top: 5px solid #0e3721;
+}
+
+.title {
+    display: block;
+    margin: 10px auto 5px;
+    width: 300px;
+}
+
+.formTitle {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.secTitle {
+    color: gray
+}
+
+.nameForm {
+    background-color: white;
+    color: var(--text-color);
+}
+
+.nameForm:hover {
+    border-bottom: 5px solid #0e3721;
+    transition: ease 0.5s;
+}
+
+.emailForm {
+    background-color: white;
+    color: var(--text-color);
+}
+
+.emailForm:hover {
+    border-bottom: 5px solid #0e3721;
+    transition: ease 0.5s;
+}
+
+.messageForm {
+    background-color: white;
+    overflow: hidden;
+    height: 10rem;
+}
+
+.messageForm:hover {
+    border-bottom: 5px solid #0e3721;
+    transition: ease 0.5s;
+}
+
+.entry {
+    display: block;
+    margin: 30px auto;
+    min-width: 300px;
+    padding: 10px;
+    border-radius: 2px;
+    border: none;
+    transition: all 0.5s ease 0s;
+}
+
+.submit {
+    width: 100%;
+    color: white;
+    background-color: #0e3721;
+    font-size: 20px;
+}
+
+.submit:hover {
+    box-shadow: 15px 15px 15px 5px rgba(78, 72, 77, 0.219);
+    transform: translateY(-3px);
+}
